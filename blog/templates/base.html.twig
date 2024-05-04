@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}ЭТО МОЙ БЛОГ{% endblock %}</title>
+        <style>
+            body {
+                background-color: white;
+            }
+        </style>
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <h1>ЭТО МОЙ БЛОГ</h1>
+    </body>
+</html>
