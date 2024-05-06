@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Страница регистрации</title>
+</head>
+<body>
+    <h1>Регистрация</h1>
+    <form action="{{ path('registration_submit') }}" method="POST">
+        <label for="login">Логин:</label>
+        <input type="text" id="login" name="login" required><br><br>
+        
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+</body>
+</html>
