@@ -1,5 +1,26 @@
 controllers:
     resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+        path: '../src/Controller/'
+        namespace: 'App\Controller'
     type: attribute
+
+main:
+    path: '/main'
+    controller: 'App\Controller\UserController::index'
+    methods: ['GET']
+
+login:
+    path: '/login'
+    controller: 'App\Controller\AuthController::login'
+    methods: ['GET']
+
+login_post:
+    path: '/login'
+    controller: 'App\Controller\AuthController::processLogin'
+    methods: ['POST']
+
+create_article:
+    path: '/create'
+    controller: 'App\Controller\ArticleController::create'
+    methods: ['GET', 'POST']
+

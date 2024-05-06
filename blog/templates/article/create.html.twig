@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создать статью</title>
+</head>
+<body>
+    <h1>Создать статью</h1>
+    
+    <form method="post" action="{{ path('create_article') }}" enctype="multipart/form-data">
+        <label for="title">Заголовок:</label>
+        <input type="text" name="title" id="title" required>
+        
+        <label for="content">Текст:</label>
+        <textarea name="content" id="content" required></textarea>
+        
+        <label for="image">Изображение:</label>
+        <input type="file" name="image" id="image">
+        
+        <button type="submit">Опубликовать</button>
+    </form>
+
+<h2>Материалы</h2>
+     <h2>Список статей</h2>
+    <ul>
+    {% for article in articles %}
+        <li>
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.content }}</p>
+            {% if article.image is not null %}
+                <img src="{{ asset(article.image) }}" alt="Изображение статьи">
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>
